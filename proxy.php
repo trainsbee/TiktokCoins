@@ -42,6 +42,7 @@ if (preg_match('/<script id="__UNIVERSAL_DATA_FOR_REHYDRATION__" type="applicati
         $stats = $scope["userInfo"]["statsV2"] ?? $scope["userInfo"]["stats"] ?? [];
 
         $result = [
+            "nickname" => $user["nickname"] ?? '',
             "username" => $user["uniqueId"] ?? '',
             "bio" => $user["signature"] ?? '',
             "avatar" => $user["avatarMedium"] ?? '',
