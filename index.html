@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Buscar Usuario TikTok</title>
+<script src="https://unpkg.com/feather-icons"></script>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+  .user-card { display: flex; align-items: center; margin-top: 20px; }
+  .avatar { width: 80px; height: 80px; border-radius: 50%; margin-right: 15px; }
+  .info { display: flex; flex-direction: column; }
+  .username { font-weight: bold; font-size: 1.2em; }
+  .bio { font-size: 0.9em; color: #555; }
+  .followers { margin-top: 5px; font-size: 0.9em; color: #333; }
+</style>
+</head>
+<body>
+
+<input type="text" id="username" placeholder="Ingrese usuario TikTok">
+<button id="search">Buscar</button>
+
+<div id="preview"></div>
+
+<script>
+document.getElementById("search").addEventListener("click", async () => {
+    const username = document.getElementById("username").value.trim();
+    const preview = document.getElementById("preview");
+    preview.innerHTML = "Cargando...";
+
+    if (!username) return;
+
+    try {
+        const res = await fetch(`proxy.php?user=${username}`);
+        const data = await res.json();
+
+        if (data.error) {
+            preview.innerHTML = `<p>${data.error}</p>`;
+            return;
+        }
+
+        preview.innerHTML = `
+            <div class="user-card">
+                <img class="avatar" src="${data.avatar}" alt="${data.username}">
+                <div class="info">
+                    <div class="username">
+                        ${data.username} 
+                        ${data.verified ? '<i data-feather="check-circle" style="color: #1da1f2;"></i>' : ''}
+                    </div>
+                    <div class="bio">${data.bio}</div>
+                    <div class="followers">Followers: ${data.followers}</div>
+                </div>
+            </div>
+        `;
+
+        feather.replace();
+    } catch (err) {
+        preview.innerHTML = `<p>Error al buscar usuario</p>`;
+        console.error(err);
+    }
+});
+</script>
+
+</body>
+</html>
