@@ -1,0 +1,165 @@
+    *{
+        margin: 0;
+        padding: 0;
+    }
+  body { font-family: sans-serif;}
+
+
+    .navbar{
+        border-bottom: 1px solid #ccc;
+        height: 64px;
+    }
+  .navbar nav{
+    height: 100%;
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.container {
+    padding: 0 20px;
+    margin: 0 auto;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+.brand {
+    display: flex;
+    align-items: center;
+}
+.brand_logo {
+    width: 30px;
+    height: 30px;
+}
+.brand_name {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.settings span{
+    display: inline-flex;
+    padding: 0 10px;
+    gap: 10px;
+    align-items: center;
+   border-left: 1px solid #ccc;
+}
+.profile-card {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.avatar .img{
+   width: 40px;
+    height: 40px;
+}
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+}
+.nickname {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.followers {
+    margin-top: 5px;
+    font-size: 15px;
+    
+    color: #161823bf;
+}
+.followers strong{
+    color: #000000;
+}
+
+main {
+width: 100%;
+}
+.form-preview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.button-tiktok {
+    padding: 0 16px;
+    height: 40px;
+    background-color: #fe2c55;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button-tiktok:hover {
+    background-color: #e62e4d;
+}
+
+#search-preview {
+    margin-top: 20px;
+}
+.form-preview {
+    margin-top: 20px;
+    width: 100%;
+}
+.form-preview input {
+    font-family: inherit;
+    outline: none;
+    padding: 0 16px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+.form-preview input:focus {
+    border-color: #fe2c55;
+}
+#search-preview{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card-coins{
+    margin-top: 20px;
+}
+
+.coin-body{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+}
+
+.coin-info{
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.box-coin{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    font-weight: 900;
+}
+.coin-value{
+   color: #0000007a;
+   font-size: 14px;
+}
+.coin-icon svg{
+    font-size: 24px;
+}
